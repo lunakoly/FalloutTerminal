@@ -1,0 +1,19 @@
+osascript -e "
+tell application \"Terminal\"
+    do script \"$DIR/FalloutTerminal.sh\" in front window
+end tell"
+
+
+
+DIR=$(dirname "$0")
+DIR=\'$DIR\'
+osascript -e "
+tell application \"Terminal\"
+    do script \"$DIR/FalloutTerminal.sh\"
+    set current settings of selected tab of window 1 to settings set \"FalloutTerminal\"
+end tell"
+
+
+# DIR=$(printf '%q ' \"$DIR\")
+# open "$DIR/../Resources/FalloutTerminal.terminal" --args "kek" # "$DIR/FalloutTerminal.sh"
+# open -a Terminal "$DIR/FalloutTerminal.sh"
